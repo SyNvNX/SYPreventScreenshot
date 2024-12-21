@@ -1,4 +1,4 @@
-SYPreventScreenshot [中文介绍]()
+SYPreventScreenshot [中文介绍](https://github.com/SyNvNX/SYPreventScreenshot/blob/main/README_CN.md)
 ============
 
 A universal library for preventing screenshots and screen recordings, supporting both ImageView and Label.
