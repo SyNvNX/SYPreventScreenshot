@@ -8,6 +8,8 @@ SYPreventScreenshot
 
 实际上是支持防录屏，效果图为了展示效果，禁止了防录屏的功能
 
+<img src="./Screenshots/gif_detal.gif" width="250"/>
+
 ## 介绍
 
 本库通过 DRM (Digital Rights Management,数字版权管理) 和 preventsCapture 特性支持了 >= iOS 10 系统的防截图功能。

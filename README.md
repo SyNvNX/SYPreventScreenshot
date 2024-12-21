@@ -9,6 +9,8 @@ A universal library for preventing screenshots and screen recordings, supporting
 
 Actually, screen recording prevention is supported. The effect screenshots has disabled the screen recording prevention feature to display the effect.
 
+<img src="./Screenshots/gif_detal.gif" width="250"/>
+
 ## Introduction
 
 This library supports screenshot prevention on iOS 10 and above through DRM (Digital Rights Management) and the preventsCapture feature.
