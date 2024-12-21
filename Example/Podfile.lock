@@ -1,0 +1,16 @@
+PODS:
+  - SYPreventScreenshot (0.1.0)
+
+DEPENDENCIES:
+  - SYPreventScreenshot (from `../`)
+
+EXTERNAL SOURCES:
+  SYPreventScreenshot:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SYPreventScreenshot: e0927ee368f12b3d2cb0fdfc419336396eaba497
+
+PODFILE CHECKSUM: 3bceebae17c4183a100e71957cc54eec47dd6df2
+
+COCOAPODS: 1.12.0

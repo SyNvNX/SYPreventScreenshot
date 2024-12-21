@@ -1,0 +1,12 @@
+use_frameworks!
+platform :ios, '10.0'
+
+target 'SYPreventScreenshot_Example' do
+  pod 'SYPreventScreenshot', :path => '../'
+
+  target 'SYPreventScreenshot_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
