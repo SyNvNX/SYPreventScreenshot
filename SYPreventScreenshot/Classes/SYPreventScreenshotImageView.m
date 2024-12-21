@@ -570,9 +570,6 @@ IB_DESIGNABLE
 }
 
 + (BOOL)useAVPlayer {
-    //     #ifdef DEBUG
-    //         return YES;
-    //     #endif
     if (@available(iOS 13.0, *)) {
         return NO;
     }
