@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setUp];
+    [self setUp];
     self.view.backgroundColor = UIColor.whiteColor;
 }
 
