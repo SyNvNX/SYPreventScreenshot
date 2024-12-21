@@ -46,7 +46,7 @@ view.addSubview(label)
 
 ### CocoaPods
 
-在 `podfile` 中添加以下代码：
+在 `Podfile` 中添加以下代码：
 
 ```ruby
 pod 'SYPreventScreenshot'
