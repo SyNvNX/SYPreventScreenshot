@@ -96,6 +96,8 @@ $ pod install
 
 ## Todo
 
+* Support Swift Package Manager
+* Support Carthage
 * Support Kingfisher
 * Support YYWebImage
 
