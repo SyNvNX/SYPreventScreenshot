@@ -23,11 +23,18 @@ typedef NS_ENUM(NSInteger, SYPreventScreenshotImageViewContentMode) {
 };
 
 @interface SYPreventScreenshotImageView : UIView
+
+- (instancetype)initWithImage:(UIImage *)image
+             placeholderImage:(UIImage *)placeholderImage
+                        frame:(CGRect)frame;
+
 - (instancetype)initWithImage:(nullable UIImage *)image
              placeholderImage:(nullable UIImage *)placeholderImage;
+
 - (instancetype)initWithImage:(nullable UIImage *)image;
 - (void)setImage:(nullable UIImage *)image
     placeholderImage:(nullable UIImage *)placeholderImage;
+
 + (BOOL)useAVPlayer;
 
 @property(nullable, nonatomic, strong) IBInspectable UIImage *image;

@@ -57,9 +57,23 @@ static void *SYPreventScreenshotImageViewKVOContext =
 IB_DESIGNABLE
 @implementation SYPreventScreenshotImageView
 
+- (instancetype)init {
+    return [self initWithImage:nil];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [self initWithImage:nil placeholderImage:nil];
+}
+
 - (instancetype)initWithImage:(UIImage *)image
              placeholderImage:(UIImage *)placeholderImage {
-    if (self = [super initWithFrame:CGRectZero]) {
+    return [self initWithImage:image placeholderImage:placeholderImage frame:CGRectZero];
+}
+
+- (instancetype)initWithImage:(UIImage *)image
+             placeholderImage:(UIImage *)placeholderImage
+                        frame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         [self setUp];
         self.image = image;
         self.placeholderImage = placeholderImage;
