@@ -42,6 +42,29 @@ let label = SYPreventScreenshotLabel(text: "Hello, world!")
 view.addSubview(label)
 ```
 
+### SDWebImage
+
+* Objective-C
+
+```objective-c
+#import <SYPreventScreenshot/SYPreventScreenshotImageView+WebCache.h>
+
+SYPreventScreenshotImageView *imageView = [[SYPreventScreenshotImageView alloc] initWithImage:nil];
+NSURL *URL = [NSURL URLWithString:@"http://www.domain.com/path/to/image.png"];
+UIImage *placeholderImage = [UIImage imageNamed:@"image"];
+[imageView sy_setImageWithURL:URL placeholderImage:placeholderImage];
+```
+
+* Swift
+
+```swift
+import SYPreventScreenshot
+
+let imageView = SYPreventScreenshotImageView(image: nil)
+let placeholderImage = UIImage(named: "image")
+let `URL` = URL.init(string: "http://www.domain.com/path/to/image.png")
+imageView.sy_setImage(with: `URL`, placeholderImage: placeholderImage)
+```
 
 ## 安装
 
@@ -51,6 +74,10 @@ view.addSubview(label)
 
 ```ruby
 pod 'SYPreventScreenshot'
+
+# or 
+
+pod 'SYPreventScreenshot/SDWebImage'
 ```
 
 然后在终端运行以下命令：
