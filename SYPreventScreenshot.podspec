@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SYPreventScreenshot'
-  s.version          = '0.4.2'
+  s.version          = '0.4.3'
   s.summary          = 'A universal library for preventing screenshots and screen recordings, supporting both ImageView and Label.'
 
   s.description      = <<-DESC
