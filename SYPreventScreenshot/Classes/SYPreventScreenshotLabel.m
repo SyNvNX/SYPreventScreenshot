@@ -191,7 +191,7 @@ IB_DESIGNABLE
             self.preventViewImageView.placeholderImage = image;
         }
         self.preventViewImageView.image = image;
-
+        UIGraphicsEndImageContext();
         self.preventViewImageViewTrailingConstraint.constant = -(maxX - width);
         self.preventViewImageViewBottomConstraint.constant = (maxY - height);
         [self invalidateIntrinsicContentSize];
