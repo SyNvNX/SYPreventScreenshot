@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-FOUNDATION_EXTERN NSString * _Nonnull const SYServerManagerProcessRequestNotification;
-FOUNDATION_EXTERN NSString * _Nonnull const SYServerManagerPathKey;
+FOUNDATION_EXTERN NSString
+    *_Nonnull const SYServerManagerProcessRequestNotification;
+FOUNDATION_EXTERN NSString *_Nonnull const SYServerManagerPathKey;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SYServerManager : NSObject

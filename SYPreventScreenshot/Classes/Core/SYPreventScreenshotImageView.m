@@ -67,7 +67,9 @@ IB_DESIGNABLE
 
 - (instancetype)initWithImage:(UIImage *)image
              placeholderImage:(UIImage *)placeholderImage {
-    return [self initWithImage:image placeholderImage:placeholderImage frame:CGRectZero];
+    return [self initWithImage:image
+              placeholderImage:placeholderImage
+                         frame:CGRectZero];
 }
 
 - (instancetype)initWithImage:(UIImage *)image
@@ -443,24 +445,24 @@ IB_DESIGNABLE
 
 - (void)updatePlaceholderImageView {
     dispatch_main_sync_safe(^{
-        BOOL hasImage = self.image != nil;
-        if ([self.class useAVPlayer]) {
-            BOOL hasResponse = self.hasResponse;
-            BOOL shouldHideContent =
-                self.screenStatusCaptureDetector.shouldHideContent &&
-                self.hideContentEnabled;
-            if (shouldHideContent) {
-                self.placeholderImageView.hidden = YES;
-            } else {
-                self.placeholderImageView.hidden = hasResponse && !hasImage;
-            }
-        } else {
-            if (self.placeholderImageView.image && !hasImage) {
-                self.placeholderImageView.hidden = NO;
-            } else {
-                self.placeholderImageView.hidden = YES;
-            }
-        }
+      BOOL hasImage = self.image != nil;
+      if ([self.class useAVPlayer]) {
+          BOOL hasResponse = self.hasResponse;
+          BOOL shouldHideContent =
+              self.screenStatusCaptureDetector.shouldHideContent &&
+              self.hideContentEnabled;
+          if (shouldHideContent) {
+              self.placeholderImageView.hidden = YES;
+          } else {
+              self.placeholderImageView.hidden = hasResponse && !hasImage;
+          }
+      } else {
+          if (self.placeholderImageView.image && !hasImage) {
+              self.placeholderImageView.hidden = NO;
+          } else {
+              self.placeholderImageView.hidden = YES;
+          }
+      }
     });
 }
 
@@ -640,11 +642,10 @@ IB_DESIGNABLE
         [NSNotificationCenter.defaultCenter
             addObserver:self
                selector:@selector(processRequestNotification:)
-         name:SYServerManagerProcessRequestNotification
+                   name:SYServerManagerProcessRequestNotification
                  object:nil];
     }
-    
-    
+
     self.hideContentEnabled = YES;
     self.canShowScreenCaptureView = YES;
     self.contentMode = SYPreventScreenshotImageViewContentModeResize;
@@ -702,7 +703,7 @@ IB_DESIGNABLE
     [NSLayoutConstraint activateConstraints:constraints];
 }
 
-- (void)processRequestNotification:(NSNotification *)not {
+- (void)processRequestNotification:(NSNotification *)not{
     NSString *path = not.userInfo[SYServerManagerPathKey] ?: @"";
     if (!self.hasResponse) {
         self.hasResponse = [self.videoPath isEqualToString:path];
