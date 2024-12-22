@@ -218,7 +218,7 @@ IB_DESIGNABLE
     self.sampleBufferDisplayLayerView = nil;
 
     [self setStatusUnknown];
-
+    self.hasResponse = NO;
     if (image) {
         BOOL useAVPlayer = [self.class useAVPlayer];
         if (useAVPlayer) {
@@ -636,11 +636,14 @@ IB_DESIGNABLE
            selector:@selector(applicationDidBecomeActive:)
                name:UIApplicationDidBecomeActiveNotification
              object:nil];
-    [NSNotificationCenter.defaultCenter
-        addObserver:self
-           selector:@selector(processRequestNotification:)
-     name:SYServerManagerProcessRequestNotification
-             object:nil];
+    if ([self.class useAVPlayer]) {
+        [NSNotificationCenter.defaultCenter
+            addObserver:self
+               selector:@selector(processRequestNotification:)
+         name:SYServerManagerProcessRequestNotification
+                 object:nil];
+    }
+    
     
     self.hideContentEnabled = YES;
     self.canShowScreenCaptureView = YES;
@@ -701,7 +704,9 @@ IB_DESIGNABLE
 
 - (void)processRequestNotification:(NSNotification *)not {
     NSString *path = not.userInfo[SYServerManagerPathKey] ?: @"";
-    self.hasResponse = [self.videoPath isEqualToString:path];
+    if (!self.hasResponse) {
+        self.hasResponse = [self.videoPath isEqualToString:path];
+    }
     [self updatePlaceholderImageView];
 }
 
