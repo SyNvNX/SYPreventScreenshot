@@ -13,7 +13,9 @@ SYPreventScreenshot
 
 ## 介绍
 
-本库通过 DRM (Digital Rights Management,数字版权管理) 和 preventsCapture 特性支持了 >= iOS 10 系统的防截图功能。本库的实现没有使用 UITextField 的 secureTextEntry 特性实现防截图，因为其使用到了私有类，在各个系统版本兼容性差，目前已经知道在 iOS 10,11,12,16.7.8,18 等系统版本不支持，在 iOS 15.0.2,16.2 等多个版本存异常问题，可能有更多不同版本有异常，但无法一一验证。
+本库通过 DRM (Digital Rights Management,数字版权管理) 和 preventsCapture 特性支持了 >= iOS 10 系统的防截图功能。
+
+本库的实现没有使用 UITextField 的 secureTextEntry 特性实现防截图，因为其使用到了私有类，在各个系统版本兼容性差，目前已经知道在 iOS 10,11,12,16.7.8,18 等系统版本不支持，在 iOS 15.0.2,16.2 等多个版本存异常问题，可能有更多不同版本有异常，但无法一一验证。
 
 ## 如何使用
 
