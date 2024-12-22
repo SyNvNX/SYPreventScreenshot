@@ -9,7 +9,7 @@ SYPreventScreenshot
 	<img src="./Screenshots/gif_detal.gif" width="250" />
 </p>
 
-第一个效果图实际上是支持防录屏，效果图为了展示效果，禁止了防录屏的功能
+第一个效果图实际上是支持防录屏，效果图为了展示效果，禁止了防录屏的功能。
 
 ## 介绍
 
