@@ -94,6 +94,10 @@ $ pod install
 
 - iOS 10.0 or late
 
+## Todo
+
+* Support Kingfisher
+* Support YYWebImage
 
 ## License
 
