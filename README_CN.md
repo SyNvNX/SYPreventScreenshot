@@ -90,7 +90,7 @@ $ pod install
 
 - iOS 10.0+
 
-## Todo
+## TODO
 
 * Support Swift Package Manager
 * Support Carthage
