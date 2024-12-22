@@ -62,7 +62,7 @@ import SYPreventScreenshot
 
 let imageView = SYPreventScreenshotImageView(image: nil)
 let placeholderImage = UIImage(named: "image")
-let `URL` = URL.init(string: "http://www.domain.com/path/to/image.png")
+let `URL` = URL(string: "http://www.domain.com/path/to/image.png")
 imageView.sy_setImage(with: `URL`, placeholderImage: placeholderImage)
 ```
 
