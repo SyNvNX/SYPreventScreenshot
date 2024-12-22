@@ -4,10 +4,10 @@ SYPreventScreenshot
 一个用来防截图和防录屏的通用库，支持 ImageView 和 Label。
 ## 效果
 
-<figure> 
-	<img src="./Screenshots/gif.gif" width="250" />
+<p float="left">
+  <img src="./Screenshots/gif.gif" width="250" />
 	<img src="./Screenshots/gif_detal.gif" width="250" />
-</figure>
+</p>
 
 第一个效果图实际上是支持防录屏，效果图为了展示效果，禁止了防录屏的功能
 
