@@ -7,7 +7,7 @@ SYPreventScreenshot
 <figure> 
 	<img src="./Screenshots/gif.gif" width="250" />
 	<img src="./Screenshots/gif_detal.gif" width="250" />
-<figure />
+</figure>
 
 第一个效果图实际上是支持防录屏，效果图为了展示效果，禁止了防录屏的功能
 

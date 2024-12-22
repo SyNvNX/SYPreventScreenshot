@@ -8,7 +8,7 @@ A universal library for preventing screenshots and screen recordings, supporting
 <figure> 
 	<img src="./Screenshots/gif.gif" width="250" />
 	<img src="./Screenshots/gif_detal.gif" width="250" />
-<figure />
+</figure>
 
 The first screenshot actually supports screen recording protection. The effect screenshots has disabled the screen recording prevention feature to display the effect.
 
