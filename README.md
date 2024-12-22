@@ -5,11 +5,11 @@ A universal library for preventing screenshots and screen recordings, supporting
 
 ## Screenshots
 
-<img src="./Screenshots/gif.gif" width="250"/>
+<img src="./Screenshots/gif.gif" width="250" />
+<img src="./Screenshots/gif_detal.gif" width="250" float: left />
 
-Actually, screen recording prevention is supported. The effect screenshots has disabled the screen recording prevention feature to display the effect.
+The first screenshot actually supports screen recording protection. The effect screenshots has disabled the screen recording prevention feature to display the effect.
 
-<img src="./Screenshots/gif_detal.gif" width="250"/>
 
 ## Introduction
 
