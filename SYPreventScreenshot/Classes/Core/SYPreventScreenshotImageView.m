@@ -50,6 +50,8 @@ static void *SYPreventScreenshotImageViewKVOContext =
     SYPreventSampleBufferDisplayLayerView *sampleBufferDisplayLayerView;
 @property(nonatomic, strong) NSError *error;
 @property(nonatomic, strong) UIImageView *placeholderImageView;
+@property(nonatomic, assign) BOOL hasResponse;
+@property(nonatomic, copy) NSString *videoPath;
 @end
 
 IB_DESIGNABLE
@@ -377,6 +379,7 @@ IB_DESIGNABLE
                  errorBlock:^(NSError *_Nullable error) {
                    [weakSelf setFailWithError:error];
                  }];
+    self.videoPath = delegate.videoPath;
     dispatch_queue_t queue = dispatch_queue_create(
         "com.sy.resourceLoader.queue", DISPATCH_QUEUE_SERIAL);
     [asset.resourceLoader setDelegate:delegate queue:queue];
@@ -426,17 +429,24 @@ IB_DESIGNABLE
 
 - (void)updatePlaceholderImageView {
     dispatch_main_sync_safe(^{
-      if ([self.class useAVPlayer]) {
-          BOOL hasResponse = SYServerManager.sharedInstance.hasResponse;
-          BOOL shouldHideContent =
-              self.screenStatusCaptureDetector.shouldHideContent &&
-              self.hideContentEnabled;
-          if (shouldHideContent) {
-              self.placeholderImageView.hidden = YES;
-          } else {
-              self.placeholderImageView.hidden = hasResponse;
-          }
-      }
+        BOOL hasImage = self.image != nil;
+        if ([self.class useAVPlayer]) {
+            BOOL hasResponse = self.hasResponse;
+            BOOL shouldHideContent =
+                self.screenStatusCaptureDetector.shouldHideContent &&
+                self.hideContentEnabled;
+            if (shouldHideContent) {
+                self.placeholderImageView.hidden = YES;
+            } else {
+                self.placeholderImageView.hidden = hasResponse && !hasImage;
+            }
+        } else {
+            if (self.placeholderImageView.image && !hasImage) {
+                self.placeholderImageView.hidden = NO;
+            } else {
+                self.placeholderImageView.hidden = YES;
+            }
+        }
     });
 }
 
@@ -612,6 +622,12 @@ IB_DESIGNABLE
            selector:@selector(applicationDidBecomeActive:)
                name:UIApplicationDidBecomeActiveNotification
              object:nil];
+    [NSNotificationCenter.defaultCenter
+        addObserver:self
+           selector:@selector(processRequestNotification:)
+     name:SYServerManagerProcessRequestNotification
+             object:nil];
+    
     self.hideContentEnabled = YES;
     self.canShowScreenCaptureView = YES;
     self.contentMode = SYPreventScreenshotImageViewContentModeResize;
@@ -667,6 +683,12 @@ IB_DESIGNABLE
     ];
 
     [NSLayoutConstraint activateConstraints:constraints];
+}
+
+- (void)processRequestNotification:(NSNotification *)not {
+    NSString *path = not.userInfo[SYServerManagerPathKey] ?: @"";
+    self.hasResponse = [self.videoPath isEqualToString:path];
+    [self updatePlaceholderImageView];
 }
 
 - (void)screenStatusCaptureDetectorShouldReload:

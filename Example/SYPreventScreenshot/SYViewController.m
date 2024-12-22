@@ -9,6 +9,7 @@
 #import "SYViewController.h"
 #import <SYPreventScreenshot/SYPreventScreenshot.h>
 #import "SYPreventScreenshot_Example-Swift.h"
+#import "SYSDViewController.h"
 
 @interface SYViewController ()
 
@@ -62,7 +63,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    SYSwiftViewController *vc = [SYSwiftViewController new];
+    SYSDViewController *vc = [SYSDViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

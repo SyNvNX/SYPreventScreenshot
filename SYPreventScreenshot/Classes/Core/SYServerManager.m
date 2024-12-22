@@ -15,11 +15,14 @@
 #if !__has_feature(objc_arc)
 #error This class requires automatic reference counting
 #endif
+NSString * _Nonnull const SYServerManagerProcessRequestNotification = @"SYServerManagerProcessRequestNotification";
+NSString * _Nonnull const SYServerManagerPathKey = @"path";
 
 @interface SYServerManager ()
 
 @property(nonatomic, strong) SYWebServer *webServer;
 @property(nonatomic, strong) NSMutableDictionary *videoData;
+@property(nonatomic, assign) BOOL hasResponse;
 @end
 
 @implementation SYServerManager
@@ -77,12 +80,16 @@
                       processBlock:^SYWebServerResponse *_Nullable(
                           __kindof SYWebServerRequest *_Nonnull request) {
                         weakSelf.hasResponse = YES;
-
+                              
                         NSString *Host = request.headers[@"Host"];
                         BOOL hasPrefix = [Host hasPrefix:@"localhost:"];
                         if (hasPrefix) {
-                            NSData *data = weakSelf.videoData[request.path];
+                            NSString *path = request.path ?: @"";
+                            NSData *data = weakSelf.videoData[path];
                             if (data) {
+                                dispatch_main_sync_safe(^{
+                                    [NSNotificationCenter.defaultCenter postNotificationName:SYServerManagerProcessRequestNotification object:nil userInfo:@{SYServerManagerPathKey: path}];
+                                });
                                 return [[SYWebServerDataResponse alloc]
                                     initWithData:data
                                      contentType:@"application/octet-stream"];

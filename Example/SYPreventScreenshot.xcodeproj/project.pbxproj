@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1178C6F22D14743C0044284E /* SYSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1178C6F12D14743C0044284E /* SYSwiftViewController.swift */; };
+		11D48A6B2D181F530050AB10 /* SYSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D48A6A2D181F530050AB10 /* SYSDViewController.m */; };
 		4EBFC7A633DB621F4C883FC2 /* Pods_SYPreventScreenshot_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75A364AF5B6A2A6676910E8 /* Pods_SYPreventScreenshot_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		1178C6EE2D1473F70044284E /* SYPreventScreenshot_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SYPreventScreenshot_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		1178C6F12D14743C0044284E /* SYSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SYSwiftViewController.swift; sourceTree = "<group>"; };
+		11D48A692D181F530050AB10 /* SYSDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYSDViewController.h; sourceTree = "<group>"; };
+		11D48A6A2D181F530050AB10 /* SYSDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYSDViewController.m; sourceTree = "<group>"; };
 		27EED8AA378631D20EE6551D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		35962BE244D1ABEA074470D5 /* Pods_SYPreventScreenshot_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SYPreventScreenshot_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376C95EF5752C65CA6B8B84F /* Pods-SYPreventScreenshot_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SYPreventScreenshot_Example.release.xcconfig"; path = "Target Support Files/Pods-SYPreventScreenshot_Example/Pods-SYPreventScreenshot_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				6003F594195388D20070C39A /* Supporting Files */,
 				1178C6EE2D1473F70044284E /* SYPreventScreenshot_Example-Bridging-Header.h */,
 				1178C6F12D14743C0044284E /* SYSwiftViewController.swift */,
+				11D48A692D181F530050AB10 /* SYSDViewController.h */,
+				11D48A6A2D181F530050AB10 /* SYSDViewController.m */,
 			);
 			name = "Example for SYPreventScreenshot";
 			path = SYPreventScreenshot;
@@ -338,10 +343,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SYPreventScreenshot_Example/Pods-SYPreventScreenshot_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SYPreventScreenshot/SYPreventScreenshot.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SYPreventScreenshot.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +389,7 @@
 				6003F5A7195388D20070C39A /* SYViewController.m in Sources */,
 				1178C6F22D14743C0044284E /* SYSwiftViewController.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				11D48A6B2D181F530050AB10 /* SYSDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

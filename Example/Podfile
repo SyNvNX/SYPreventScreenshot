@@ -3,7 +3,7 @@ platform :ios, '10.0'
 
 target 'SYPreventScreenshot_Example' do
   pod 'SYPreventScreenshot', :path => '../'
-
+  pod 'SYPreventScreenshot/SDWebImage', :path => '../'
   target 'SYPreventScreenshot_Tests' do
     inherit! :search_paths
 

@@ -1,16 +1,30 @@
 PODS:
-  - SYPreventScreenshot (0.1.0)
+  - SDWebImage (5.20.0):
+    - SDWebImage/Core (= 5.20.0)
+  - SDWebImage/Core (5.20.0)
+  - SYPreventScreenshot (0.2.0):
+    - SYPreventScreenshot/Core (= 0.2.0)
+  - SYPreventScreenshot/Core (0.2.0)
+  - SYPreventScreenshot/SDWebImage (0.2.0):
+    - SDWebImage (~> 5.0)
+    - SYPreventScreenshot/Core
 
 DEPENDENCIES:
   - SYPreventScreenshot (from `../`)
+  - SYPreventScreenshot/SDWebImage (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   SYPreventScreenshot:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SYPreventScreenshot: e0927ee368f12b3d2cb0fdfc419336396eaba497
+  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
+  SYPreventScreenshot: feef74d14d46f5a658aade1d8632e64c21bc9491
 
-PODFILE CHECKSUM: 3bceebae17c4183a100e71957cc54eec47dd6df2
+PODFILE CHECKSUM: 0a55ecc2ddf48536abfead228d361b50bf42cd0a
 
 COCOAPODS: 1.12.0

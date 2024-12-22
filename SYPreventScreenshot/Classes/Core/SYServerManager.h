@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+FOUNDATION_EXTERN NSString * _Nonnull const SYServerManagerProcessRequestNotification;
+FOUNDATION_EXTERN NSString * _Nonnull const SYServerManagerPathKey;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SYServerManager : NSObject
@@ -19,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) dispatch_queue_t queue;
 @property(nonatomic, assign) NSUInteger port;
 @property(strong, nonatomic, nullable) NSError *error;
-@property(nonatomic, assign) BOOL hasResponse;
 @end
 
 NS_ASSUME_NONNULL_END
