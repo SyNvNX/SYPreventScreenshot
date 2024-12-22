@@ -90,6 +90,12 @@ $ pod install
 
 - iOS 10.0+
 
+## Todo
+
+* Support Swift Package Manager
+* Support Carthage
+* Support Kingfisher
+* Support YYWebImage
 
 ## 许可证
 
