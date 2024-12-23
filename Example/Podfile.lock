@@ -2,10 +2,10 @@ PODS:
   - SDWebImage (5.20.0):
     - SDWebImage/Core (= 5.20.0)
   - SDWebImage/Core (5.20.0)
-  - SYPreventScreenshot (0.2.0):
-    - SYPreventScreenshot/Core (= 0.2.0)
-  - SYPreventScreenshot/Core (0.2.0)
-  - SYPreventScreenshot/SDWebImage (0.2.0):
+  - SYPreventScreenshot (0.4.3):
+    - SYPreventScreenshot/Core (= 0.4.3)
+  - SYPreventScreenshot/Core (0.4.3)
+  - SYPreventScreenshot/SDWebImage (0.4.3):
     - SDWebImage (~> 5.0)
     - SYPreventScreenshot/Core
 
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
-  SYPreventScreenshot: feef74d14d46f5a658aade1d8632e64c21bc9491
+  SYPreventScreenshot: 5d1d62a1bca231f87774fdf859f016f7d589392f
 
 PODFILE CHECKSUM: 0a55ecc2ddf48536abfead228d361b50bf42cd0a
 

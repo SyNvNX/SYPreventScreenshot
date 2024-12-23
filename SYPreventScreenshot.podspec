@@ -16,13 +16,13 @@ This library supports screenshot prevention on iOS 10 and above through DRM (Dig
   s.default_subspec = "Core"
   
   s.subspec "Core" do |ss|
-      ss.source_files = 'SYPreventScreenshot/Classes/Core/**/*', 'SYPreventScreenshot/Classes/WebServer/**/*'
+      ss.source_files = 'Sources/SYPreventScreenshot/**/*'
       ss.ios.library = 'z'
       ss.ios.frameworks = 'CoreServices', 'CFNetwork', 'UIKit', 'AVFoundation', 'VideoToolbox'
   end
   
   s.subspec "SDWebImage" do |ss|
-      ss.source_files = 'SYPreventScreenshot/Classes/SD/**/*'
+      ss.source_files = 'Sources/SYPreventScreenshotSDWebImage/**/*'
       ss.dependency "SYPreventScreenshot/Core"
       ss.dependency "SDWebImage", '~> 5.0'
   end
