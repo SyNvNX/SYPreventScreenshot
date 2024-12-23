@@ -46,6 +46,9 @@ let package = Package(
             dependencies: [
                 "SYPreventScreenshot",
                 .product(name: "SDWebImage", package: "SDWebImage")
+            ],
+            cSettings: [
+                .headerSearchPath("SYPreventScreenshot/Core")
             ]
         )
     ]
