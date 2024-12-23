@@ -90,7 +90,7 @@ $ pod install
 
 ## 基本要求
 
-- iOS 10.0+
+- >= iOS 10.0
 
 ## TODO
 
