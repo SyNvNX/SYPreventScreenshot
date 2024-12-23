@@ -15,7 +15,7 @@ The first screenshot actually supports screen recording protection. The effect s
 
 ## Introduction
 
-This library supports screenshot prevention on iOS 10 and above through DRM (Digital Rights Management) and the preventsCapture feature. 
+This library supports screenshot prevention on iOS 10 and above through DRM (Digital Rights Management) and the preventsCapture feature. If the simulator does not work, use a real device.
 
 The implementation in this library does not use the secureTextEntry feature of UITextField to prevent screenshots, as it relies on private classes, leading to poor compatibility across various iOS versions. It is known to be unsupported on iOS 10, 11, 12, 16.7.8, and 18, and it causes issues on versions 15.0.2 and 16.2. There may be more versions with issues.
 
