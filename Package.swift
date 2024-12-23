@@ -25,7 +25,21 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "SYPreventScreenshot"
+            name: "SYPreventScreenshot",
+            dependencies: [],
+            path: "Sources",
+            sources: [
+                "SYPreventScreenshot/Core",
+                "SYPreventScreenshot/WebServer/Core",
+                "SYPreventScreenshot/WebServer/Requests",
+                "SYPreventScreenshot/WebServer/Responses"
+            ],
+            cSettings: [
+                .headerSearchPath("SYPreventScreenshot/Core"),
+                .headerSearchPath("SYPreventScreenshot/WebServer/Core"),
+                .headerSearchPath("SYPreventScreenshot/WebServer/Requests"),
+                .headerSearchPath("SYPreventScreenshot/WebServer/Responses")
+            ]
         ),
         .target(
             name: "SYPreventScreenshotSDWebImage",
