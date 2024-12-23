@@ -29,7 +29,10 @@ let package = Package(
         ),
         .target(
             name: "SYPreventScreenshotSDWebImage",
-            dependencies: ["SDWebImage"]
+            dependencies: [
+                "SYPreventScreenshot",
+                .product(name: "SDWebImage", package: "SDWebImage")
+            ]
         )
     ]
 )
